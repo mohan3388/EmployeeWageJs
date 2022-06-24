@@ -82,3 +82,53 @@ let EmpWage = TotalEmpHrs*Wage_Per_Hours;
 console.log("Total Days: "+TotalWorkingDays+" Total Hrs: "+TotalEmpHrs+" Total Wage: "+EmpWage);
 
 
+//UC6 calculate empdailywage using map
+
+let empDailyWageMap = new Map();
+let empDailyHrsMap = new Map();
+
+
+
+// const Is_Fulltime=2;
+// const Is_Parttime=1;
+// const Parttime_Hours=4;
+// const Fulltime_Hours=8;
+// const Wage_Per_Hours=20;
+// const Max_Hrs_In_Month = 160;
+// const Number_Of_WorkingDay = 20;
+
+
+function getWorkingHours(empCheck){
+    switch(empCheck)
+    {
+        case Is_Parttime:
+            return Parttime_Hours;
+            
+        case Is_Fulltime:
+            return Fulltime_Hours;
+        default:
+            return 0;
+    }
+}
+
+
+function calculateDailWage(empHrs)
+ {
+   return empHrs*Wage_Per_Hours;
+ }
+
+//let TotalEmpHrs=0;
+//let TotalWorkingDays=0;
+let empDailyWageArr = new Array();
+while(TotalEmpHrs<=Max_Hrs_In_Month && TotalWorkingDays< Number_Of_WorkingDay)
+{
+    TotalWorkingDays++;
+    let empCheck = Math.floor(Math.random()*10)%3;
+    let empHrs = getWorkingHours(empCheck);
+    TotalEmpHrs+=empHrs;
+    empDailyWageArr.push(calculateDailWage(empHrs));
+    empDailyHrsMap.set(TotalWorkingDays, empHrs);
+    empDailyHrsMap.set(TotalWorkingDays, calculateDailWage(empHrs));
+}
+let EmpWages = calculateDailWage(TotalEmpHrs);
+console.log("Total Days: "+TotalWorkingDays+" Total hours: "+TotalEmpHrs+" Emp wage: "+EmpWage);
