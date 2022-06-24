@@ -66,3 +66,19 @@ for(let day=0; day<Number_Of_WorkingDay; day++)
 let empWage = TotalEmpHrs*Wage_Per_Hours;
 console.log("Hour: "+TotalEmpHrs+" EmpWage: "+empWage);
 
+//Uc5 using while loop calculate empwage
+const Max_Hrs_In_Month=160;
+
+
+let TotalWorkingDays=0;
+while(TotalEmpHrs<=Max_Hrs_In_Month && TotalWorkingDays<Number_Of_WorkingDay)
+{
+    TotalWorkingDays++;
+    let empCheck = Math.floor(Math.random()*10)%2;
+    let empHrs = getWorkingHours(empCheck);
+}
+
+let EmpWage = TotalEmpHrs*Wage_Per_Hours;
+console.log("Total Days: "+TotalWorkingDays+" Total Hrs: "+TotalEmpHrs+" Total Wage: "+EmpWage);
+
+
