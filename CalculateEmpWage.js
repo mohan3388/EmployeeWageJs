@@ -199,3 +199,6 @@ function totalDaysWorked(numOfDays, dailyWage)
     return numOfDays;
 }
 console.log("number of days emp worked: "+empDailyWageArr.reduce(totalDaysWorked,0));
+
+//UC8- Map function
+console.log("EmpWage map total hours: "+Array.from(empDailyWageMap.values).reduce(totalWages,0));
